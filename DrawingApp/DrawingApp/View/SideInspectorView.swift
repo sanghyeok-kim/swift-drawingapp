@@ -13,6 +13,22 @@ class SideInspectorView: UIStackView {
     
     //TODO: VC로부터 값 받아서 Set or Clear 메소드 구현
     
+    func setBackgroundColorValueButtonTitle(by newText: String) {
+        backgroundColorValueButton.setTitle(newText, for: .normal)
+    }
+    
+    func clearBackgroundColorValueButtonTitle() {
+        backgroundColorValueButton.setTitle("", for: .normal)
+    }
+    
+    func setBackgroundColorValueButtonColor(by newColor: UIColor) {
+        backgroundColorValueButton.backgroundColor = newColor
+    }
+    
+    func clearBackgroundColorValueButtonColor() {
+        backgroundColorValueButton.backgroundColor = .systemGray2
+    }
+    
     private let backgroundMenuStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +58,7 @@ class SideInspectorView: UIStackView {
     
     private let backgroundColorValueButton: UIButton = {
         let button = UIButton()
-        button.setTitle("#000000", for: .normal)
+        button.setTitle("", for: .normal)
         button.backgroundColor = .systemGray2
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1
