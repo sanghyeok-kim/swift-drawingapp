@@ -99,26 +99,28 @@ extension ViewController: PlaneDelegate {
         //최근에 선택되었던 사각형이 있다면
         if let recentlySelectedRectangle = plane.recentlySelectedRectangle,
             let recentlySelectedRectangleView = rectangleMap[recentlySelectedRectangle] {
+            
             recentlySelectedRectangleView.clearCorner()
+            sideInspectorView.clearBackgroundColorValueButtonTitle()
+            sideInspectorView.clearBackgroundColorValueButtonColor()
         }
         
         //터치이벤트 발생한 지점에 rectangle이 없거나, 그 rectangle의 value로 연결된 view가 없다면 return
         guard let rectangle = rectangle, let rectangleView = rectangleMap[rectangle] else { return }
-        
         plane.updateRecentlySelected(rectangle: rectangle)
+        
         rectangleView.toggleCorner()
-        
-        
+        sideInspectorView.setBackgroundColorValueButtonTitle(by: rectangle.backGroundColor.getHexaData())
+        sideInspectorView.setBackgroundColorValueButtonColor(by: rectangle.getUIColor())
         //TODO: SideInspectorView에 선택된 사각형의 속성값 전달
             // rectangle != nil -> status 전달
             // rectangle == nil -> clear
         
     }
     
-    
     func didCreateRectangle(_ rectangle: Rectangle) {
-        let color = RectangleAttributeFactory.getUIColor(of: rectangle)
-        let frame = RectangleAttributeFactory.getRectangleFrame(of: rectangle)
+        let color = rectangle.getUIColor()
+        let frame = rectangle.getShapeFrame()
         let rectangleView = RectangleView(frame: frame, color: color)
         
         presentRectangleView.addSubview(rectangleView)
