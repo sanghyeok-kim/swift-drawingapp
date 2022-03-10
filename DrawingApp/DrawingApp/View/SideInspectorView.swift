@@ -26,7 +26,7 @@ class SideInspectorView: UIStackView {
     }
     
     func clearBackgroundColorValueButtonColor() {
-        backgroundColorValueButton.backgroundColor = .systemGray2
+        backgroundColorValueButton.backgroundColor = .systemGray5
     }
     
     private let backgroundMenuStackView: UIStackView = {
@@ -59,9 +59,9 @@ class SideInspectorView: UIStackView {
     private let backgroundColorValueButton: UIButton = {
         let button = UIButton()
         button.setTitle("", for: .normal)
-        button.backgroundColor = .systemGray2
+        button.backgroundColor = .systemGray5
         button.layer.cornerRadius = 10
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.systemGray3.cgColor
         return button
     }()
