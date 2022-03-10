@@ -99,10 +99,10 @@ class Rectangle: Shapable {
             }
             
             static func generateRandomToken() -> String {
-                let characters = Array(Bound.alphaNumeric)
+                let characters = Array(Range.alphaNumeric)
                 
                 var id = ""
-                (0..<Bound.tokenLength).forEach { _ in
+                (0..<Range.tokenLength).forEach { _ in
                     let randomCharacter = characters[Int.random(in: (0..<characters.count))]
                     id.append(randomCharacter)
                 }
@@ -117,7 +117,7 @@ class Rectangle: Shapable {
         }
         
         extension Identifier {
-            enum Bound {
+            enum Range {
                 static let alphaNumeric = "abcdefghijklmnopqrstuvwxyz0123456789"
                 static let tokenLength = 3
             }
@@ -140,8 +140,8 @@ class Rectangle: Shapable {
         }
         
         extension Size {
-            enum Bound {
-                static let lowwer = 0.0
+            enum Range {
+                static let lower = 0.0
                 static let upper = 100.0
             }
         }
@@ -169,8 +169,8 @@ class Rectangle: Shapable {
         }
         
         extension Point {
-            enum Bound {
-                static let lowwer = 0.0
+            enum Range {
+                static let lower = 0.0
                 static let upper = 100.0
             }
         }
@@ -199,9 +199,9 @@ class Rectangle: Shapable {
             }
             
             convenience init?(red: Double, green: Double, blue: Double) {
-                if red < Bound.lowwer || red > Bound.upper ||
-                    green < Bound.lowwer || green > Bound.upper ||
-                    blue < Bound.lowwer || blue > Bound.upper
+                if red < Range.lower || red > Range.upper ||
+                    green < Range.lower || green > Range.upper ||
+                    blue < Range.lower || blue > Range.upper
                 {
                     return nil
                 }
@@ -211,8 +211,8 @@ class Rectangle: Shapable {
         }
         
         extension Color {
-            enum Bound {
-                static let lowwer = 0.0
+            enum Range {
+                static let lower = 0.0
                 static let upper = 255.0
             }
         }
@@ -261,88 +261,52 @@ class Rectangle: Shapable {
 
 ## *Rectangle Factory class 구현*
 
-### protocol `RandomRectangleFactorable`
-
-```swift
-protocol RandomRectangleFactorable {
-    func generateRandomIdentifier() -> Identifier
-    func generateRandomSize() -> Size
-    func generateRandomPoint() -> Point
-    func generateRandomColor() -> Color
-    
-    func createRandomShape() -> Shapable
-}
-```
-<br>
-
-### class `RectangleFactory`: `RandomRectangleFactorable`
+### class `RandomRectangleFactory`
 
 ```swift
 class RectangleFactory {
 
-    func createRactangle(identifier: Identifier,
-                         size: Size,
-                         point: Point,
-                         color: Color,
-                         alpha: Alpha) -> Rectangle {
-        
-        return Rectangle(identifier: identifier,
-                         size: size,
-                         point: point,
-                         backGroundColor: color,
-                         alpha: alpha)
-    }
-}
-```
-
-- `extension RectangleFactory: RandomRectangleFactorable`
-    - <details>
-        
-        ```swift
-        extension RectangleFactory: RandomRectangleFactorable {
-            
-            func generateRandomIdentifier() -> Identifier {
+    func generateRandomIdentifier() -> Identifier {
                 return Identifier()
             }
             
-            func generateRandomSize() -> Size {
-                let validRange = (Size.Bound.lowwer...Size.Bound.upper)
-                
-                let randomWidth = round(Double.random(in: validRange))
-                let randomHeight = round(Double.random(in: validRange))
-                
-                return Size(width: randomWidth, height: randomHeight)
-            }
-            
-            func generateRandomPoint() -> Point {
-                let validRange = (Point.Bound.lowwer...Point.Bound.upper)
-                
-                let randomX = round(Double.random(in: validRange))
-                let randomY = round(Double.random(in: validRange))
-                
-                return Point(x: randomX, y: randomY)
-            }
-            
-            func generateRandomColor() -> Color {
-                let validRange = (Color.Bound.lowwer...Color.Bound.upper)
-                
-                let randomRed = round(Double.random(in: validRange))
-                let randomGreen = round(Double.random(in: validRange))
-                let randomBlue = round(Double.random(in: validRange))
-                
-                return Color(validRed: randomRed, validGreen: randomGreen, validBlue: randomBlue)
-            }
-            
-            func createRandomShape() -> Shapable {
-                return Rectangle(identifier: generateRandomIdentifier(),
-                                 size: generateRandomSize(),
-                                 point: generateRandomPoint(),
-                                 backGroundColor: generateRandomColor(),
-                                 alpha: Alpha.random)
-            }
-        }
-        ```
+    func generateRandomSize() -> Size {
+        let validRange = (Size.Range.lower...Size.Range.upper)
         
+        let randomWidth = round(Double.random(in: validRange))
+        let randomHeight = round(Double.random(in: validRange))
+        
+        return Size(width: randomWidth, height: randomHeight)
+    }
+    
+    func generateRandomPoint() -> Point {
+        let validRange = (Point.Range.lower...Point.Range.upper)
+        
+        let randomX = round(Double.random(in: validRange))
+        let randomY = round(Double.random(in: validRange))
+        
+        return Point(x: randomX, y: randomY)
+    }
+    
+    func generateRandomColor() -> Color {
+        let validRange = (Color.Range.lower...Color.Range.upper)
+        
+        let randomRed = round(Double.random(in: validRange))
+        let randomGreen = round(Double.random(in: validRange))
+        let randomBlue = round(Double.random(in: validRange))
+        
+        return Color(validRed: randomRed, validGreen: randomGreen, validBlue: randomBlue)
+    }
+    
+    func createRandomShape() -> Shapable {
+        return Rectangle(identifier: generateRandomIdentifier(),
+                            size: generateRandomSize(),
+                            point: generateRandomPoint(),
+                            backGroundColor: generateRandomColor(),
+                            alpha: Alpha.random)
+    }
+}
+```
 
 <br>
 <br>
