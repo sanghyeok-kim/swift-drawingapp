@@ -115,9 +115,10 @@ extension ViewController: PlaneDelegate {
         
     }
     
+    
     func didCreateRectangle(_ rectangle: Rectangle) {
-        let color = RectangleAttributeFactory.createUIColor(by: rectangle)
-        let frame = RectangleAttributeFactory.createRectangleFrame(by: rectangle)
+        let color = RectangleAttributeFactory.getUIColor(of: rectangle)
+        let frame = RectangleAttributeFactory.getRectangleFrame(of: rectangle)
         let rectangleView = RectangleView(frame: frame, color: color)
         
         presentRectangleView.addSubview(rectangleView)

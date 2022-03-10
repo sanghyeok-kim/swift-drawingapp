@@ -10,7 +10,7 @@ import UIKit
 
 class RectangleAttributeFactory {
     
-    static func createUIColor(by rectangle: Rectangle) -> UIColor {
+    static func getUIColor(of rectangle: Rectangle) -> UIColor {
         let red = rectangle.backGroundColor.red / Color.Range.upper
         let green = rectangle.backGroundColor.green / Color.Range.upper
         let blue = rectangle.backGroundColor.blue / Color.Range.upper
@@ -19,7 +19,7 @@ class RectangleAttributeFactory {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    static func createRectangleFrame(by rectangle: Rectangle) -> CGRect {
+    static func getRectangleFrame(of rectangle: Rectangle) -> CGRect {
         let xCoordinate = rectangle.point.x
         let yCoordinate = rectangle.point.y
         
