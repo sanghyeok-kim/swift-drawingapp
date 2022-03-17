@@ -24,6 +24,8 @@
 		1E541E8427CCBC98000C8B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E541E8227CCBC98000C8B50 /* LaunchScreen.storyboard */; };
 		1E5A154627E2326000FA4C9B /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A154527E2326000FA4C9B /* NotificationNames.swift */; };
 		1E5A154827E240FA00FA4C9B /* UserInfoKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A154727E240FA00FA4C9B /* UserInfoKeys.swift */; };
+		1E5A155727E310DD00FA4C9B /* AddPictureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A155627E310DD00FA4C9B /* AddPictureButton.swift */; };
+		1E5A155927E3180300FA4C9B /* AddButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A155827E3180300FA4C9B /* AddButtonFactory.swift */; };
 		1E80BDF427D23EEB004F77C1 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E80BDF327D23EEB004F77C1 /* Plane.swift */; };
 		1E80BE7E27D6F96F004F77C1 /* AddRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E80BE7D27D6F96F004F77C1 /* AddRectangleButton.swift */; };
 		1E80BE8027D6F97B004F77C1 /* SideInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E80BE7F27D6F97B004F77C1 /* SideInspectorView.swift */; };
@@ -67,6 +69,8 @@
 		1E541E8527CCBC98000C8B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E5A154527E2326000FA4C9B /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		1E5A154727E240FA00FA4C9B /* UserInfoKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoKeys.swift; sourceTree = "<group>"; };
+		1E5A155627E310DD00FA4C9B /* AddPictureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureButton.swift; sourceTree = "<group>"; };
+		1E5A155827E3180300FA4C9B /* AddButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonFactory.swift; sourceTree = "<group>"; };
 		1E80BDF327D23EEB004F77C1 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		1E80BE7D27D6F96F004F77C1 /* AddRectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRectangleButton.swift; sourceTree = "<group>"; };
 		1E80BE7F27D6F97B004F77C1 /* SideInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideInspectorView.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				1E80BE7D27D6F96F004F77C1 /* AddRectangleButton.swift */,
+				1E5A155627E310DD00FA4C9B /* AddPictureButton.swift */,
 				1E80BE7F27D6F97B004F77C1 /* SideInspectorView.swift */,
 				1E02CA9527E05D9C00B08B30 /* BasicShapeView.swift */,
 				1E02CA8827DF73E000B08B30 /* RectangleView.swift */,
@@ -233,6 +238,7 @@
 				1EE4CCE627CD0751005EA3D4 /* RandomShapeFactory.swift */,
 				1E02CABE27E15EB500B08B30 /* RandomAttributeFactory.swift */,
 				1E02CA7E27DF4F4B00B08B30 /* ViewFactory.swift */,
+				1E5A155827E3180300FA4C9B /* AddButtonFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				1EE4CCE727CD0751005EA3D4 /* RandomShapeFactory.swift in Sources */,
 				1E02CA7B27DEFEC700B08B30 /* Alphable.swift in Sources */,
 				1E5A154827E240FA00FA4C9B /* UserInfoKeys.swift in Sources */,
+				1E5A155927E3180300FA4C9B /* AddButtonFactory.swift in Sources */,
 				1E541E7C27CCBC97000C8B50 /* ViewController.swift in Sources */,
 				1E541E7827CCBC97000C8B50 /* AppDelegate.swift in Sources */,
 				1E80BE8027D6F97B004F77C1 /* SideInspectorView.swift in Sources */,
@@ -364,6 +371,7 @@
 				1EE4CCE527CCFD44005EA3D4 /* Rectangle.swift in Sources */,
 				1E02CABF27E15EB500B08B30 /* RandomAttributeFactory.swift in Sources */,
 				1E02CA7727DEFEB400B08B30 /* Colorable.swift in Sources */,
+				1E5A155727E310DD00FA4C9B /* AddPictureButton.swift in Sources */,
 				1E80BDF427D23EEB004F77C1 /* Plane.swift in Sources */,
 				1E02CA9627E05D9C00B08B30 /* BasicShapeView.swift in Sources */,
 				1E80BE7E27D6F96F004F77C1 /* AddRectangleButton.swift in Sources */,
