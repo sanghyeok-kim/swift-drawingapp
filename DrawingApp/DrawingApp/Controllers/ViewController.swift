@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         //Add Action
         buttonView.rectangleButton.addTarget(self, action: #selector(addRectangleButtonTouched), for: .touchUpInside)
+        buttonView.pictureButton.addTarget(self, action: #selector(addPictureButtonTouched), for: .touchUpInside)
         sideInspectorView.backgroundColorValueButton.addTarget(self, action: #selector(backgroundColorValueButtonTouched), for: .touchUpInside)
         sideInspectorView.alphaPlusButton.addTarget(self, action: #selector(alphaPlusButtonTouched), for: .touchUpInside)
         sideInspectorView.alphaMinusButton.addTarget(self, action: #selector(alphaMinusButtonTouched), for: .touchUpInside)
@@ -80,6 +81,15 @@ extension ViewController {
         let rectangleViewXBound = presentShapeView.frame.width - Size.Range.width
         let rectangleViewYBound = presentShapeView.frame.height - Size.Range.height
         plane.addRectangle(bound: (rectangleViewXBound, rectangleViewYBound), by: RandomShapeFactory.self)
+    }
+    
+    @objc func addPictureButtonTouched() {
+        
+        //TODO: 코드 중복 제거하기
+        let rectangleViewXBound = presentShapeView.frame.width - Size.Range.width
+        let rectangleViewYBound = presentShapeView.frame.height - Size.Range.height
+        
+        
     }
     
     @objc func handlePresentShapeViewTap(_ tap: UITapGestureRecognizer) {
